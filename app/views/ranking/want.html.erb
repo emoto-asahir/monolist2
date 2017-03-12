@@ -1,2 +1,12 @@
-<h1>Ranking#want</h1>
-<p>Find me in app/views/ranking/want.html.erb</p>
+<h1>Ranking#have</h1>
+<% @items.each.with_index(1) do |item,i| %>
+
+  <%= "#{i}位" %><br>
+  <!-- タイトル -->
+  <%= item.title %><br>
+  <%= link_to "このアイテムのページ",url_for(item) %>
+  <br>
+  <!-- 画像 -->
+  <%= image_tag(item.medium_image , alt: item.title) %><br>
+<hr>
+<% end %>
